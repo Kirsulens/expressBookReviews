@@ -30,6 +30,10 @@ if (req.session.authorization) {
  
 const PORT =5000;
 
+app.get('/user', (req, res) => {
+  res.json({ message: 'User information retrieved successfully' });
+});
+
 app.use("/customer", customer_routes);
 app.use("/", genl_routes);
 
