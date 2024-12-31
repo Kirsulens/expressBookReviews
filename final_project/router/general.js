@@ -9,8 +9,10 @@ public_users.post("/register", (req,res) => {
   //Write your code here
   let username = req.body.username;
   let password = req.body.password;
+  console.log('Received username:', username);
+    console.log('Received password:', password);
   if(username && password){
-    if(isValid(username)){
+    if(!isValid(username)){
       users.push({"username" : username, "password" : password })
       return res.status(200).json({message : `User ${username} , has successfully been added.`})
     }
